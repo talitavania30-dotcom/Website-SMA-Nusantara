@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Nusantara - Sekolah Unggulan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50 navbar-scroll">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SN</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-800">SMA Nusantara</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-700 hover:text-blue-600 transition duration-300">Beranda</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-blue-600 transition duration-300">Tentang</a>
+                    <a href="#fasilitas" class="text-gray-700 hover:text-blue-600 transition duration-300">Fasilitas</a>
+                    <a href="#ekstrakurikuler" class="text-gray-700 hover:text-blue-600 transition duration-300">Ekstrakurikuler</a>
+                    <a href="#kontak" class="text-gray-700 hover:text-blue-600 transition duration-300">Kontak</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#beranda" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Tentang</a>
+                <a href="#fasilitas" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Fasilitas</a>
+                <a href="#ekstrakurikuler" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Ekstrakurikuler</a>
+                <a href="#kontak" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg pt-16 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Selamat Datang di<br>
+                    <span class="text-yellow-300">SMA Nusantara</span>
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                    Sekolah unggulan yang mengembangkan potensi siswa melalui pendidikan berkualitas, 
+                    fasilitas modern, dan beragam kegiatan ekstrakurikuler
+                </p>
+                <div class="space-x-4">
+                    <button onclick="scrollToSection('tentang')" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-300">
+                        Pelajari Lebih Lanjut
+                    </button>
+                    <button onclick="scrollToSection('kontak')" class="border-2 border-white text-white hover:bg-white hover:text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-300">
+                        Hubungi Kami
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Tentang SMA Nusantara</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Didirikan dengan visi mencerdaskan bangsa, SMA Nusantara telah menjadi pilihan utama 
+                    bagi orang tua yang menginginkan pendidikan terbaik untuk anak-anak mereka.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-blue-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎓</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pendidikan Berkualitas</h3>
+                    <p class="text-gray-600">Kurikulum nasional plus dengan metode pembelajaran modern dan inovatif</p>
+                </div>
+                <div class="text-center card-hover bg-green-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">👨‍🏫</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Tenaga Pengajar Profesional</h3>
+                    <p class="text-gray-600">Guru-guru berpengalaman dan bersertifikat dengan dedikasi tinggi</p>
+                </div>
+                <div class="text-center card-hover bg-purple-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🏆</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Prestasi Gemilang</h3>
+                    <p class="text-gray-600">Berbagai penghargaan akademik dan non-akademik tingkat nasional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="fasilitas" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fasilitas Sekolah</h2>
+                <p class="text-lg text-gray-600">Fasilitas lengkap dan modern untuk mendukung proses pembelajaran</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Perpustakaan -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Perpustakaan Digital</h3>
+                        <p class="text-gray-600">Koleksi buku lengkap dengan sistem digital dan ruang baca yang nyaman untuk mendukung kegiatan literasi siswa.</p>
+                    </div>
+                </div>
+
+                <!-- Laboratorium -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Laboratorium Sains</h3>
+                        <p class="text-gray-600">Lab Fisika, Kimia, dan Biologi dengan peralatan modern untuk praktikum dan eksperimen ilmiah.</p>
+                    </div>
+                </div>
+
+                <!-- Komputer -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lab Komputer</h3>
+                        <p class="text-gray-600">Ruang komputer dengan spesifikasi tinggi dan akses internet cepat untuk pembelajaran teknologi informasi.</p>
+                    </div>
+                </div>
+
+                <!-- Aula -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Aula Serbaguna</h3>
+                        <p class="text-gray-600">Aula berkapasitas 500 orang dengan sound system modern untuk berbagai acara dan kegiatan sekolah.</p>
+                    </div>
+                </div>
+
+                <!-- Lapangan Olahraga -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5zM8 15v-3a1 1 0 011-1h2a1 1 0 011 1v3H8z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lapangan Olahraga</h3>
+                        <p class="text-gray-600">Lapangan basket, sepak bola, dan voli dengan standar internasional untuk kegiatan olahraga siswa.</p>
+                    </div>
+                </div>
+
+                <!-- Kantin -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kantin Sehat</h3>
+                        <p class="text-gray-600">Kantin dengan menu makanan sehat dan bergizi, dikelola dengan standar kebersihan tinggi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Section -->
+    <section id="ekstrakurikuler" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ekstrakurikuler</h2>
+                <p class="text-lg text-gray-600">Beragam kegiatan untuk mengembangkan bakat dan minat siswa</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Anggar -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Fencer silhouette -->
+                            <path d="M100 20 L110 30 L120 40 L115 50 L110 60 L105 70 L100 80 L95 70 L90 60 L85 50 L90 40 L100 20 Z"/>
+                            <!-- Body -->
+                            <rect x="95" y="80" width="10" height="40" rx="2"/>
+                            <!-- Arms -->
+                            <rect x="85" y="85" width="30" height="4" rx="2" transform="rotate(-15 100 87)"/>
+                            <!-- Sword -->
+                            <rect x="120" y="83" width="40" height="2" rx="1"/>
+                            <rect x="158" y="81" width="6" height="6" rx="1"/>
+                            <!-- Legs -->
+                            <rect x="92" y="120" width="6" height="30" rx="2" transform="rotate(-10 95 135)"/>
+                            <rect x="102" y="120" width="6" height="30" rx="2" transform="rotate(10 105 135)"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">⚔️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Anggar</h3>
+                        <p class="text-sm text-gray-600">Olahraga pedang yang melatih ketangkasan, konsentrasi, dan strategi bertarung</p>
+                    </div>
+                </div>
+
+                <!-- Teater -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Stage -->
+                            <rect x="20" y="140" width="160" height="40" rx="4"/>
+                            <!-- Curtains -->
+                            <path d="M20 40 Q30 60 20 80 Q30 100 20 120 Q30 140 20 160 L20 40"/>
+                            <path d="M180 40 Q170 60 180 80 Q170 100 180 120 Q170 140 180 160 L180 40"/>
+                            <!-- Performers -->
+                            <circle cx="80" cy="120" r="8"/>
+                            <rect x="76" y="128" width="8" height="20" rx="2"/>
+                            <circle cx="120" cy="115" r="8"/>
+                            <rect x="116" y="123" width="8" height="25" rx="2"/>
+                            <!-- Spotlight -->
+                            <path d="M100 20 L90 40 L110 40 Z" opacity="0.7"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">🎭</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Teater</h3>
+                        <p class="text-sm text-gray-600">Seni peran yang mengembangkan kepercayaan diri dan kemampuan berekspresi</p>
+                    </div>
+                </div>
+
+                <!-- Sepak Bola -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Soccer field -->
+                            <rect x="30" y="60" width="140" height="80" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Center circle -->
+                            <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Goal posts -->
+                            <rect x="25" y="85" width="10" height="30" rx="2"/>
+                            <rect x="165" y="85" width="10" height="30" rx="2"/>
+                            <!-- Players -->
+                            <circle cx="70" cy="90" r="6"/>
+                            <rect x="67" y="96" width="6" height="15" rx="2"/>
+                            <circle cx="130" cy="110" r="6"/>
+                            <rect x="127" y="116" width="6" height="15" rx="2"/>
+                            <!-- Soccer ball -->
+                            <circle cx="100" cy="100" r="8"/>
+                            <path d="M95 95 L105 95 M100 90 L100 110 M96 96 L104 104 M104 96 L96 104"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">⚽</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Sepak Bola</h3>
+                        <p class="text-sm text-gray-600">Olahraga tim yang melatih kerjasama, stamina, dan teknik bermain</p>
+                    </div>
+                </div>
+
+                <!-- Saman -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Saman dancers in sitting position -->
+                            <g transform="translate(40, 80)">
+                                <!-- Dancer 1 -->
+                                <circle cx="0" cy="0" r="8"/>
+                                <rect x="-4" y="8" width="8" height="15" rx="2"/>
+                                <rect x="-15" y="10" width="12" height="3" rx="1" transform="rotate(-30)"/>
+                                <rect x="3" y="10" width="12" height="3" rx="1" transform="rotate(30)"/>
+                                <rect x="-6" y="23" width="12" height="8" rx="2"/>
+                            </g>
+                            <g transform="translate(80, 85)">
+                                <!-- Dancer 2 -->
+                                <circle cx="0" cy="0" r="8"/>
+                                <rect x="-4" y="8" width="8" height="15" rx="2"/>
+                                <rect x="-15" y="8" width="12" height="3" rx="1" transform="rotate(-45)"/>
+                                <rect x="3" y="8" width="12" height="3" rx="1" transform="rotate(45)"/>
+                                <rect x="-6" y="23" width="12" height="8" rx="2"/>
+                            </g>
+                            <g transform="translate(120, 80)">
+                                <!-- Dancer 3 -->
+                                <circle cx="0" cy="0" r="8"/>
+                                <rect x="-4" y="8" width="8" height="15" rx="2"/>
+                                <rect x="-15" y="12" width="12" height="3" rx="1" transform="rotate(-20)"/>
+                                <rect x="3" y="12" width="12" height="3" rx="1" transform="rotate(20)"/>
+                                <rect x="-6" y="23" width="12" height="8" rx="2"/>
+                            </g>
+                            <!-- Traditional pattern decoration -->
+                            <path d="M20 40 Q30 35 40 40 Q50 35 60 40" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M140 40 Q150 35 160 40 Q170 35 180 40" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">💃</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Tari Saman</h3>
+                        <p class="text-sm text-gray-600">Tari tradisional Aceh yang melatih kekompakan dan kelincahan gerakan</p>
+                    </div>
+                </div>
+
+                <!-- Basket -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Basketball court -->
+                            <rect x="40" y="60" width="120" height="80" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Center circle -->
+                            <circle cx="100" cy="100" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Basketball hoop -->
+                            <rect x="35" y="90" width="10" height="20" rx="2"/>
+                            <ellipse cx="40" cy="90" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Net -->
+                            <path d="M32 90 L32 100 M40 90 L40 100 M48 90 L48 100" stroke="currentColor" stroke-width="1"/>
+                            <!-- Player shooting -->
+                            <circle cx="80" cy="110" r="8"/>
+                            <rect x="77" y="118" width="6" height="20" rx="2"/>
+                            <rect x="70" y="115" width="15" height="4" rx="2" transform="rotate(-45 77.5 117)"/>
+                            <!-- Basketball -->
+                            <circle cx="60" cy="80" r="6"/>
+                            <path d="M54 80 L66 80 M60 74 L60 86 M56 76 L64 84 M64 76 L56 84"/>
+                            <!-- Motion lines -->
+                            <path d="M66 82 Q50 75 45 85" stroke="currentColor" stroke-width="1" fill="none" opacity="0.7"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">🏀</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Basket</h3>
+                        <p class="text-sm text-gray-600">Olahraga yang mengasah koordinasi, ketepatan, dan strategi permainan</p>
+                    </div>
+                </div>
+
+                <!-- Band -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Stage -->
+                            <rect x="20" y="140" width="160" height="30" rx="4"/>
+                            <!-- Drummer -->
+                            <circle cx="60" cy="120" r="6"/>
+                            <rect x="57" y="126" width="6" height="15" rx="2"/>
+                            <!-- Drum set -->
+                            <ellipse cx="60" cy="135" rx="12" ry="6"/>
+                            <rect x="50" y="125" width="4" height="15" rx="2"/>
+                            <rect x="66" y="125" width="4" height="15" rx="2"/>
+                            <!-- Guitarist -->
+                            <circle cx="100" cy="115" r="6"/>
+                            <rect x="97" y="121" width="6" height="20" rx="2"/>
+                            <!-- Guitar -->
+                            <ellipse cx="105" cy="125" rx="8" ry="15"/>
+                            <rect x="113" y="115" width="2" height="20"/>
+                            <!-- Bassist -->
+                            <circle cx="140" cy="118" r="6"/>
+                            <rect x="137" y="124" width="6" height="18" rx="2"/>
+                            <!-- Bass -->
+                            <ellipse cx="145" cy="130" rx="6" ry="18"/>
+                            <rect x="151" y="115" width="2" height="30"/>
+                            <!-- Music notes -->
+                            <circle cx="80" cy="80" r="3"/>
+                            <rect x="83" y="70" width="1" height="13"/>
+                            <circle cx="120" cy="75" r="3"/>
+                            <rect x="123" y="65" width="1" height="13"/>
+                            <!-- Amplifiers -->
+                            <rect x="25" y="120" width="15" height="20" rx="2"/>
+                            <rect x="160" y="120" width="15" height="20" rx="2"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">🎸</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Band</h3>
+                        <p class="text-sm text-gray-600">Musik ensemble yang mengembangkan bakat bermusik dan kerjasama tim</p>
+                    </div>
+                </div>
+
+                <!-- Cheerleader -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Cheerleader 1 -->
+                            <g transform="translate(60, 80)">
+                                <circle cx="0" cy="0" r="8"/>
+                                <rect x="-4" y="8" width="8" height="20" rx="2"/>
+                                <!-- Arms with pom-poms -->
+                                <rect x="-20" y="5" width="15" height="4" rx="2" transform="rotate(-45)"/>
+                                <rect x="5" y="5" width="15" height="4" rx="2" transform="rotate(45)"/>
+                                <!-- Pom-poms -->
+                                <circle cx="-15" cy="-5" r="4" opacity="0.8"/>
+                                <circle cx="15" cy="-5" r="4" opacity="0.8"/>
+                                <!-- Legs -->
+                                <rect x="-6" y="28" width="5" height="18" rx="2" transform="rotate(-10)"/>
+                                <rect x="1" y="28" width="5" height="18" rx="2" transform="rotate(10)"/>
+                            </g>
+                            <!-- Cheerleader 2 -->
+                            <g transform="translate(140, 85)">
+                                <circle cx="0" cy="0" r="8"/>
+                                <rect x="-4" y="8" width="8" height="20" rx="2"/>
+                                <!-- Arms with pom-poms -->
+                                <rect x="-18" y="8" width="15" height="4" rx="2" transform="rotate(-30)"/>
+                                <rect x="3" y="8" width="15" height="4" rx="2" transform="rotate(30)"/>
+                                <!-- Pom-poms -->
+                                <circle cx="-12" cy="0" r="4" opacity="0.8"/>
+                                <circle cx="12" cy="0" r="4" opacity="0.8"/>
+                                <!-- Legs -->
+                                <rect x="-6" y="28" width="5" height="18" rx="2"/>
+                                <rect x="1" y="28" width="5" height="18" rx="2"/>
+                            </g>
+                            <!-- Stadium/crowd background -->
+                            <path d="M20 50 L40 45 L60 50 L80 45 L100 50 L120 45 L140 50 L160 45 L180 50" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+                            <!-- Megaphone -->
+                            <path d="M100 120 L110 115 L115 125 L105 130 Z"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">📣</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Cheerleader</h3>
+                        <p class="text-sm text-gray-600">Tim penyemangat yang melatih koreografi, stamina, dan semangat juang</p>
+                    </div>
+                </div>
+
+                <!-- Seni Rupa -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center relative">
+                        <svg class="w-32 h-32 text-white" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Easel -->
+                            <rect x="90" y="40" width="20" height="80" rx="2"/>
+                            <rect x="85" y="120" width="30" height="4" rx="2"/>
+                            <!-- Canvas -->
+                            <rect x="70" y="50" width="60" height="50" rx="2" fill="white" stroke="currentColor" stroke-width="2"/>
+                            <!-- Painting on canvas -->
+                            <circle cx="85" cy="70" r="8" fill="#FFD700" opacity="0.8"/>
+                            <rect x="105" y="65" width="15" height="10" rx="2" fill="#4CAF50" opacity="0.8"/>
+                            <path d="M75 85 Q90 80 105 85 Q120 90 125 85" stroke="#2196F3" stroke-width="3" fill="none" opacity="0.8"/>
+                            <!-- Artist -->
+                            <circle cx="50" cy="80" r="8"/>
+                            <rect x="47" y="88" width="6" height="20" rx="2"/>
+                            <!-- Arm holding brush -->
+                            <rect x="35" y="85" width="20" height="3" rx="1" transform="rotate(-15 45 86.5)"/>
+                            <!-- Paintbrush -->
+                            <rect x="30" y="82" width="8" height="2" rx="1" transform="rotate(-15 34 83)"/>
+                            <rect x="28" y="81" width="4" height="4" rx="1" transform="rotate(-15 30 83)" opacity="0.8"/>
+                            <!-- Palette -->
+                            <ellipse cx="40" cy="110" rx="12" ry="8" fill="white" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="35" cy="108" r="2" fill="#FF5722"/>
+                            <circle cx="40" cy="106" r="2" fill="#2196F3"/>
+                            <circle cx="45" cy="108" r="2" fill="#4CAF50"/>
+                            <!-- Art supplies -->
+                            <rect x="140" y="100" width="3" height="25" rx="1"/>
+                            <rect x="145" y="95" width="3" height="30" rx="1"/>
+                            <rect x="150" y="105" width="3" height="20" rx="1"/>
+                        </svg>
+                        <div class="absolute top-4 right-4 text-4xl">🎨</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Seni Rupa</h3>
+                        <p class="text-sm text-gray-600">Mengembangkan kreativitas melalui lukis, gambar, dan karya seni visual</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-20 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+                <p class="text-lg text-gray-300">Tertarik bergabung? Hubungi kami untuk informasi lebih lanjut</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Alamat</p>
+                                <p class="text-gray-300">Jl. Pendidikan No. 123, Jakarta Selatan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Telepon</p>
+                                <p class="text-gray-300">(021) 1234-5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-300">info@smanusantara.sch.id</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Kirim Pesan</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nama Lengkap</label>
+                            <input type="text" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="Masukkan email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="Tulis pesan Anda"></textarea>
+                        </div>
+                        <button type="button" onclick="showMessage()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-white font-bold text-lg">SN</span>
+                    </div>
+                    <span class="text-xl font-bold">SMA Nusantara</span>
+                </div>
+                <p class="text-gray-400 mb-4">Mencerdaskan Bangsa, Membangun Karakter</p>
+                <p class="text-sm text-gray-500">&copy; 2024 SMA Nusantara. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click events to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-scroll');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Contact form demo message
+        function showMessage() {
+            alert('Demo: Pesan Anda telah dikirim! Tim kami akan segera menghubungi Anda.');
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card-hover, section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980cf26336b2fda4',t:'MTc1ODE1NzY1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
